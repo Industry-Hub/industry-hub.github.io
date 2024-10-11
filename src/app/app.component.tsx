@@ -1,24 +1,22 @@
-import IHLogoWhite from "@/assets/logoWhite.png";
-import "./app.component.scss";
-import { BackgroundBeams } from "@/components/ui/background-beams";
-function App() {
+import { Theme } from "@radix-ui/themes";
+import React from "react";
+import { RouterProvider } from "react-router-dom";
+import AppRoutesConfig from "./router";
+import { ThemeProvider } from "next-themes";
+import { Toaster } from "@/components/ui/sonner";
+import { Toaster as ToastMaster } from "@/components/ui/toaster";
+import './app.component.scss'
+
+const App: React.FC = () => {
   return (
-    <>
-      <div className="h-screen flex items-center justify-center">
-        <BackgroundBeams />
-        <div className="logo">
-          <img
-            src={IHLogoWhite}
-            alt="Coming Soon Logo"
-            className="logo-image mb-4"
-          />
-          <p className="text-white text-2xl font-bold text-center">
-            Coming soon to Universities in Andhra Pradesh.
-          </p>
-        </div>
-      </div>
-    </>
+    <ThemeProvider attribute="class" enableSystem={false}>
+      <Theme accentColor="gray" scaling="95%" appearance="dark" className="w-screen">
+        <RouterProvider router={AppRoutesConfig} />
+        <Toaster />
+        <ToastMaster />
+      </Theme>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
