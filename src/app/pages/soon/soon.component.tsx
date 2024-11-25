@@ -14,7 +14,10 @@ function ComingSoon() {
             className="logo-image mb-4"
           />
           <p className="text-white text-2xl font-bold text-center">
-            Coming soon to Universities in Andhra Pradesh.
+            Coming soon
+          </p>
+          <p className="text-white text-xl pt-3 font-bold text-center">
+          To Universities in Andhra Pradesh.
           </p>
         </div>
       </div>
